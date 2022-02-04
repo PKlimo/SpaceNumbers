@@ -2,18 +2,23 @@ extends Area2D
 
 var lvl # index in level_def - name of node
 var level_def = {
-	"1":{"od":1, "do":3, "speed":0},
-	"2":{"od":1, "do":3, "speed":1},
-	"3":{"od":1, "do":3, "speed":2},
-	"4":{"od":4, "do":6, "speed":0},
-	"5":{"od":4, "do":6, "speed":1},
-	"6":{"od":4, "do":6, "speed":2},
-	"7":{"od":7, "do":9, "speed":0},
-	"8":{"od":7, "do":9, "speed":1},
-	"9":{"od":7, "do":9, "speed":2},
-	"10":{"od":0, "do":9, "speed":0},
-	"11":{"od":0, "do":9, "speed":1},
-	"12":{"od":0, "do":9, "speed":2}
+	"1":{"od":1, "do":3, "speed":0, "typ":"E"},
+	"2":{"od":1, "do":3, "speed":1, "typ":"E"},
+	"3":{"od":1, "do":3, "speed":2, "typ":"E"},
+	"4":{"od":4, "do":6, "speed":0, "typ":"E"},
+	"5":{"od":4, "do":6, "speed":1, "typ":"E"},
+	"6":{"od":4, "do":6, "speed":2, "typ":"E"},
+	"7":{"od":7, "do":9, "speed":0, "typ":"E"},
+	"8":{"od":7, "do":9, "speed":1, "typ":"E"},
+	"9":{"od":7, "do":9, "speed":2, "typ":"E"},
+	"10":{"od":0, "do":9, "speed":0, "typ":"E"},
+	"11":{"od":0, "do":9, "speed":1, "typ":"E"},
+	"12":{"od":0, "do":9, "speed":2, "typ":"E"},
+	"13":{"od":1, "do":3, "speed":0, "typ":"F"},
+	"14":{"od":1, "do":6, "speed":0, "typ":"F"},
+	"15":{"od":1, "do":9, "speed":0, "typ":"F"},
+	"16":{"od":1, "do":9, "speed":1, "typ":"F"},
+	"17":{"od":1, "do":9, "speed":2, "typ":"F"}
 }
 
 func _ready():
@@ -28,6 +33,7 @@ func _ready():
 	$Description/Keyboard.draw()
 	
 	$Description/Range.text = str(level_def[str(lvl)]["od"], " - ", level_def[str(lvl)]["do"])
+	$Description/Range.visible = level_def[str(lvl)]["typ"] == "E"
 	$Description/Level.text = str("Level ", lvl)
 	
 	if level_def[str(lvl)]["speed"] < 2:

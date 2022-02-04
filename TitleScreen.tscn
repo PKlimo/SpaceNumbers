@@ -28,12 +28,12 @@ __meta__ = {
 }
 
 [node name="Level_01" parent="." instance=ExtResource( 3 )]
+position = Vector2( 210, 610 )
 
 [node name="Level_02" parent="." instance=ExtResource( 3 )]
 position = Vector2( 150, 610 )
 
 [node name="Level_03" parent="." instance=ExtResource( 3 )]
-position = Vector2( 210, 610 )
 
 [node name="Level_04" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 550 )
@@ -45,13 +45,13 @@ position = Vector2( 180, 550 )
 position = Vector2( 240, 550 )
 
 [node name="Level_07" parent="." instance=ExtResource( 3 )]
-position = Vector2( 150, 490 )
+position = Vector2( 270, 490 )
 
 [node name="Level_08" parent="." instance=ExtResource( 3 )]
 position = Vector2( 210, 490 )
 
 [node name="Level_09" parent="." instance=ExtResource( 3 )]
-position = Vector2( 270, 490 )
+position = Vector2( 150, 490 )
 
 [node name="Level_10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 180, 430 )
@@ -61,3 +61,18 @@ position = Vector2( 240, 430 )
 
 [node name="Level_12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 300, 430 )
+
+[node name="Level_13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 360, 430 )
+
+[node name="Level_14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 390, 490 )
+
+[node name="Level_15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 360, 550 )
+
+[node name="Level_16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 330, 610 )
+
+[node name="Level_17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 390, 610 )
