@@ -1,0 +1,338 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/screen_bg.png" type="Texture" id=1]
+[ext_resource path="res://World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://screen.gd" type="Script" id=3]
+[ext_resource path="res://Assets/fonts/thin_54.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/sound/effects/keyok1.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Assets/sound/effects/win.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Radar.gd" type="Script" id=7]
+[ext_resource path="res://WinScreen.gd" type="Script" id=8]
+[ext_resource path="res://Keyboard.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("GameOverText:custom_colors/font_color:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0.247059, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("GameOverText:custom_colors/font_color:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.592157, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("GameOverText:custom_colors/font_color:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("GameOverText:custom_colors/font_color:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_to_black"
+length = 6.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GameOverText:custom_colors/font_color:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 4, 6 )
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "show"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ), Color( 0, 0, 0, 0.588235 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("sound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="screen" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="World" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
+position = Vector2( 19, 112 )
+
+[node name="ScreenBackground" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverBlackScreen" type="ColorRect" parent="."]
+pause_mode = 2
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOverBlackScreen"]
+anims/RESET = SubResource( 1 )
+anims/fade_to_black = SubResource( 2 )
+
+[node name="GameOverText" type="Label" parent="GameOverBlackScreen"]
+margin_right = 160.0
+margin_bottom = 90.0
+rect_scale = Vector2( 8, 8 )
+custom_colors/font_color = Color( 0.247059, 0.592157, 1, 0 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="."]
+pause_mode = 2
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="Popup"]
+margin_left = 544.0
+margin_top = 443.0
+margin_right = 601.0
+margin_bottom = 463.0
+rect_scale = Vector2( 4, 4 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1100, 450 )
+
+[node name="Radar" type="HBoxContainer" parent="."]
+margin_left = 428.0
+margin_top = 35.0
+margin_right = 1152.0
+margin_bottom = 101.0
+alignment = 2
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseScreen" type="ColorRect" parent="."]
+pause_mode = 2
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseScreen"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_fonts/font = ExtResource( 4 )
+text = "Pause"
+align = 1
+valign = 1
+
+[node name="sound" type="AudioStreamPlayer" parent="PauseScreen"]
+stream = ExtResource( 5 )
+volume_db = -20.0
+
+[node name="WinScreen" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WinScreen"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Victory"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound" type="AudioStreamPlayer" parent="WinScreen"]
+stream = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinScreen"]
+anims/RESET = SubResource( 4 )
+anims/show = SubResource( 3 )
+
+[connection signal="keypad" from="." to="World" method="_on_screen_keypad"]
+[connection signal="kill_enemy" from="World" to="Radar" method="_on_World_kill_enemy"]
+[connection signal="win" from="World" to="WinScreen" method="_on_World_win"]
+[connection signal="animation_finished" from="GameOverBlackScreen/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Popup/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="animation_finished" from="WinScreen/AnimationPlayer" to="World" method="_on_win_animation_finished"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/win.mp3-cbf970edbd5bd8c7d360c364f733df69.mp3str"
+
+[deps]
+
+source_file="res://Assets/sound/effects/win.mp3"
+dest_files=[ "res://.import/win.mp3-cbf970edbd5bd8c7d360c364f733df69.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

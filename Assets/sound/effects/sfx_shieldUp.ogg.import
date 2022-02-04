@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx_shieldUp.ogg-03f9894727a430a2db18036bf202a918.oggstr"
+
+[deps]
+
+source_file="res://Assets/sound/effects/sfx_shieldUp.ogg"
+dest_files=[ "res://.import/sfx_shieldUp.ogg-03f9894727a430a2db18036bf202a918.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
