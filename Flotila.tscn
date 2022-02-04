@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Flotila.gd" type="Script" id=2]
+[ext_resource path="res://Assets/pictures/enemies/enemyBlack1_r.png" type="Texture" id=3]
+
+[node name="Flotila" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="EnemySprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="EnemyLabel" parent="." index="2"]
+visible = false
+
+[node name="skupina" type="Node2D" parent="." index="3"]
+
+[node name="TextureRect" type="TextureRect" parent="skupina" index="0"]
+margin_left = -40.0
+margin_top = 48.5714
+margin_right = 44.0
+margin_bottom = 141.571
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="skupina" index="1"]
+margin_left = -40.0
+margin_top = -148.571
+margin_right = 44.0
+margin_bottom = -55.5714
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="skupina" index="2"]
+margin_left = 57.1428
+margin_top = -148.571
+margin_right = 141.143
+margin_bottom = -55.5714
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="skupina" index="3"]
+margin_left = 57.1429
+margin_top = -45.7143
+margin_right = 141.143
+margin_bottom = 47.2857
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="skupina" index="4"]
+margin_left = 57.1429
+margin_top = 57.1428
+margin_right = 141.143
+margin_bottom = 150.143
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect6" type="TextureRect" parent="skupina" index="5"]
+margin_left = 148.571
+margin_top = -148.571
+margin_right = 232.571
+margin_bottom = -55.5714
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect7" type="TextureRect" parent="skupina" index="6"]
+margin_left = 148.571
+margin_top = -45.7143
+margin_right = 232.571
+margin_bottom = 47.2857
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect8" type="TextureRect" parent="skupina" index="7"]
+margin_left = 148.571
+margin_top = 47.1428
+margin_right = 232.571
+margin_bottom = 140.143
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
