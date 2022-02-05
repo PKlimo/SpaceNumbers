@@ -3,7 +3,7 @@ extends Node
 var Item = preload("res://Item.tscn")
 
 func addItem(pos):
-	var item = Item.instance(PackedScene.GEN_EDIT_STATE_MAIN)
+	var item = Item.instance()
 	item.global_position = pos
 	add_child(item)
 
