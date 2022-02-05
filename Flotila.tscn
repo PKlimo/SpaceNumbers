@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Flotila.gd" type="Script" id=2]
+[ext_resource path="res://scripts/objects/Flotila.gd" type="Script" id=2]
 [ext_resource path="res://Assets/pictures/enemies/enemyBlack1_r.png" type="Texture" id=3]
 
 [node name="Flotila" instance=ExtResource( 1 )]

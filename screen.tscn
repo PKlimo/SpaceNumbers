@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Assets/screen_bg.png" type="Texture" id=1]
 [ext_resource path="res://World.tscn" type="PackedScene" id=2]
-[ext_resource path="res://screen.gd" type="Script" id=3]
+[ext_resource path="res://scripts/game/Space/screen.gd" type="Script" id=3]
 [ext_resource path="res://Assets/fonts/thin_54.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/sound/effects/keyok1.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Assets/sound/effects/win.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Radar.gd" type="Script" id=7]
-[ext_resource path="res://WinScreen.gd" type="Script" id=8]
+[ext_resource path="res://scripts/game/UI/Radar.gd" type="Script" id=7]
+[ext_resource path="res://scripts/game/Space/WinScreen.gd" type="Script" id=8]
 [ext_resource path="res://Keyboard.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]

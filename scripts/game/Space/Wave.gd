@@ -3,7 +3,7 @@ extends Node2D
 var sirka:int = 1024
 var Enemy = preload("res://Enemy.tscn")
 var Flotila = preload("res://Flotila.tscn")
-var level = load("res://Level.gd").new()
+var level = load("res://scripts/game/TitleScreen/Level.gd").new()
 # only leve definition is here - no logic, all logic goes to World
 
 var total_enemies:int = 10

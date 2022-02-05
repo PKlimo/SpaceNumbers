@@ -1,4 +1,4 @@
-extends "res://Enemy.gd"
+extends "res://scripts/objects/Enemy.gd"
 
 func _ready():
 	# pred tymto sa zavola Enemy._ready() ktora nastavi visibilitu a texturu spritu

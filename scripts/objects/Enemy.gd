@@ -10,7 +10,7 @@ func _ready():
 	randomize()
 	visible = false
 	$EnemyLabel.text = str(label_string)
-	$EnemySprite.set_texture(load("Assets/pictures/enemies/enemyBlack" + str(randi() % 5 + 1) + "_r.png"))
+	$EnemySprite.set_texture(load("res://Assets/pictures/enemies/enemyBlack" + str(randi() % 5 + 1) + "_r.png"))
 
 func _physics_process(delta):
 	if live:
