@@ -28,3 +28,7 @@ func _input(event):
 			# https://docs.godotengine.org/en/stable/classes/class_inputeventkey.html#class-inputeventkey
 			# https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#enum-globalscope-keylist
 			emit_signal("keypad",event.scancode - KEY_KP_0)
+		if event.scancode == KEY_ESCAPE:
+			get_tree().paused = false
+			if get_tree().change_scene("res://TitleScreen.tscn") != OK:
+				print("Error loading scene res://TitleScreen.tscn")
