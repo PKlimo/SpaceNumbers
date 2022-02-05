@@ -41,6 +41,7 @@ func _on_screen_keypad(key):
 			emit_signal("win")
 	else:
 		# print("missed")
+		$Items.remove_one()
 		get_node("Level").get_children()[0].missed()
 
 

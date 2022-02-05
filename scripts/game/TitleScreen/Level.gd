@@ -2,31 +2,31 @@ extends Area2D
 
 var lvl # index in level_def - name of node
 var level_def = {
-	"1":{"od":1, "do":3, "speed":0, "typ":"E"},
-	"2":{"od":1, "do":3, "speed":1, "typ":"E"},
-	"3":{"od":1, "do":3, "speed":2, "typ":"E"},
-	"4":{"od":4, "do":6, "speed":0, "typ":"E"},
-	"5":{"od":4, "do":6, "speed":1, "typ":"E"},
-	"6":{"od":4, "do":6, "speed":2, "typ":"E"},
-	"7":{"od":7, "do":9, "speed":0, "typ":"E"},
-	"8":{"od":7, "do":9, "speed":1, "typ":"E"},
-	"9":{"od":7, "do":9, "speed":2, "typ":"E"},
-	"10":{"od":0, "do":9, "speed":0, "typ":"E"},
-	"11":{"od":0, "do":9, "speed":1, "typ":"E"},
-	"12":{"od":0, "do":9, "speed":2, "typ":"E"},
-	"13":{"od":1, "do":3, "speed":0, "typ":"F"},
-	"14":{"od":1, "do":6, "speed":0, "typ":"F"},
-	"15":{"od":1, "do":9, "speed":0, "typ":"F"},
-	"16":{"od":1, "do":9, "speed":1, "typ":"F"},
-	"17":{"od":1, "do":9, "speed":2, "typ":"F"},
-	"18":{"od":2, "do":6, "speed":0, "typ":"A"},
-	"19":{"od":2, "do":9, "speed":0, "typ":"A"},
-	"20":{"od":2, "do":6, "speed":0, "typ":"B"},
-	"21":{"od":2, "do":9, "speed":0, "typ":"B"}
+	"01":{"od":1, "do":3, "speed":0, sp="80", "typ":"E"},
+	"02":{"od":1, "do":3, "speed":1, sp="90", "typ":"E"},
+	"03":{"od":1, "do":3, "speed":2, sp="100", "typ":"E"},
+	"04":{"od":4, "do":6, "speed":0, sp="90", "typ":"E"},
+	"05":{"od":4, "do":6, "speed":1, sp="100", "typ":"E"},
+	"06":{"od":4, "do":6, "speed":2, sp="110", "typ":"E"},
+	"07":{"od":7, "do":9, "speed":0, sp="100", "typ":"E"},
+	"08":{"od":7, "do":9, "speed":1, sp="110", "typ":"E"},
+	"09":{"od":7, "do":9, "speed":2, sp="120", "typ":"E"},
+	"10":{"od":0, "do":9, "speed":0, sp="80", "typ":"E"},
+	"11":{"od":0, "do":9, "speed":1, sp="90", "typ":"E"},
+	"12":{"od":0, "do":9, "speed":2, sp="100", "typ":"E"},
+	"13":{"od":1, "do":3, "speed":0, sp="80", "typ":"F"},
+	"14":{"od":1, "do":6, "speed":0, sp="70", "typ":"F"},
+	"15":{"od":1, "do":9, "speed":0, sp="60", "typ":"F"},
+	"16":{"od":1, "do":9, "speed":1, sp="70", "typ":"F"},
+	"17":{"od":1, "do":9, "speed":2, sp="80", "typ":"F"},
+	"18":{"od":2, "do":6, "speed":0, sp="60", "typ":"A"},
+	"19":{"od":2, "do":9, "speed":0, sp="60", "typ":"A"},
+	"20":{"od":2, "do":6, "speed":0, sp="60", "typ":"B"},
+	"21":{"od":2, "do":9, "speed":0, sp="60", "typ":"B"}
 }
 
 func _ready():
-	lvl = str(int(name.split("_")[1]))
+	lvl = name.split("_")[1]
 	
 	$Sprite.self_modulate = global_env.color_base
 	$Description.set_global_position(get_node("../DescriptionPosition").global_position)
@@ -34,8 +34,8 @@ func _ready():
 
 	$Description/Level.text = str("Level ", lvl)
 
-	$Description/Keyboard.od = level_def[str(lvl)]["od"]
-	$Description/Keyboard.do = level_def[str(lvl)]["do"]
+	$Description/Keyboard.od = level_def[lvl]["od"]
+	$Description/Keyboard.do = level_def[lvl]["do"]
 	$Description/Keyboard.draw()
 	
 	if level_def[str(lvl)]["typ"] == "E":

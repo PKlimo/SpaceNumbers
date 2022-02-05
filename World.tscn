@@ -179,6 +179,7 @@ texture = ExtResource( 9 )
 stream = ExtResource( 6 )
 
 [node name="PlayerBoundaries" type="StaticBody2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries"]
 position = Vector2( 515, 0 )

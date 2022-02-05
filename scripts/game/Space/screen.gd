@@ -15,6 +15,8 @@ func _on_Restart_pressed():
 	get_tree().paused = false
 
 func toggle_pause():
+	if not get_tree().paused:
+		$World/Items.remove_one()
 	get_tree().paused = not get_tree().paused
 	get_node("PauseScreen").visible = get_tree().paused
 

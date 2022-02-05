@@ -17,9 +17,6 @@ func _physics_process(delta):
 		visible = global_position.x < kon and global_position.x > zac
 		global_position.x -= speed * delta
 
-func type():
-	return "Enemy"
-
 func hit():
 	live = false
 	# TODO draw laser / line from player to current position

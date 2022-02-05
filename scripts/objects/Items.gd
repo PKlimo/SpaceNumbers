@@ -17,6 +17,10 @@ func all() -> bool:
 	# print(get_child_count())
 	return get_child_count() == 1
 
+func remove_one(): # penalty for missed shot or pause
+	if get_child_count() > 1: # if there is anything other than sound
+		get_children()[-1].queue_free() # remove last item
+
 func remove_out_of_screen():
 	for i in get_children():
 		if i.is_class("Area2D"): # because we have sound children

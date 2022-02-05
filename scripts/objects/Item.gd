@@ -5,7 +5,8 @@ func _ready():
 	randomize()
 	$Sprite.set_texture(load("res://Assets/pictures/items/powerupYellow" + str(randi() % 4 ) + ".png"))
 
-func _on_Item_body_entered(_body):
+func _on_Item_body_entered(body):
 	# player had collected the item
-	get_parent().collect(self)
+	if body.name == "PlayerShip":
+		get_parent().collect(self)
 	# queue_free()
