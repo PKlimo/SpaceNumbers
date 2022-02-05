@@ -20,7 +20,9 @@ var level_def = {
 	"16":{"od":1, "do":9, "speed":1, "typ":"F"},
 	"17":{"od":1, "do":9, "speed":2, "typ":"F"},
 	"18":{"od":2, "do":6, "speed":0, "typ":"A"},
-	"19":{"od":2, "do":9, "speed":0, "typ":"A"}
+	"19":{"od":2, "do":9, "speed":0, "typ":"A"},
+	"20":{"od":2, "do":6, "speed":0, "typ":"B"},
+	"21":{"od":2, "do":9, "speed":0, "typ":"B"}
 }
 
 func _ready():
@@ -38,9 +40,11 @@ func _ready():
 	
 	if level_def[str(lvl)]["typ"] == "E":
 		$Description/Range.text = str(level_def[str(lvl)]["od"], " - ", level_def[str(lvl)]["do"])
-	elif level_def[str(lvl)]["typ"] == "A":
+	elif level_def[str(lvl)]["typ"] == "A" or level_def[str(lvl)]["typ"] == "B":
 		$Description/Enemies.rect_scale = Vector2(0.7,0.7)
 		$Description/Enemies.set_position(Vector2(40, 300))
+		if level_def[str(lvl)]["typ"] == "B":
+			$Description/Enemies.visible = false
 		$Description/Enemies2.rect_scale = Vector2(0.7,0.7)
 		$Description/Enemies2.set_position(Vector2(40, 350))
 		$Description/Range.rect_scale = Vector2(0.6,0.6)

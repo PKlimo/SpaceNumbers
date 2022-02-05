@@ -3,7 +3,8 @@ extends Node2D
 var sirka:int = 1024
 var Enemy = preload("res://scenes/Enemies/Enemy.tscn")
 var Flotila = preload("res://scenes/Enemies/Flotila.tscn")
-var Addition = preload("res://scenes/Enemies/Addition.tscn") 
+var Addition = preload("res://scenes/Enemies/Addition.tscn")
+var BlindAdd = preload("res://scenes/Enemies/BlindAdd.tscn")  
 var level = load("res://scripts/game/TitleScreen/Level.gd").new()
 # only leve definition is here - no logic, all logic goes to World
 
@@ -38,6 +39,8 @@ func _ready():
 			enemy = Enemy.instance()
 		elif typ == "A":
 			enemy = Addition.instance()
+		elif typ == "B":
+			enemy = BlindAdd.instance()
 		elif typ == "F":
 			enemy = Flotila.instance()
 		else:
@@ -52,6 +55,10 @@ func _ready():
 			rozostup = 0
 			place_min = 220
 			place_max = 300
+		elif enemy.name == "BlindAdd":
+			rozostup = 0
+			place_min = 50
+			place_max = 450
 		elif enemy.name == "Enemy":
 			rozostup = 1
 			place_min = 50
