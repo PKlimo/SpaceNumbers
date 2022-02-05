@@ -125,11 +125,56 @@ margin_bottom = 97.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 6 )
 
+[node name="Enemies2" type="Control" parent="Description"]
+margin_top = 300.0
+margin_right = 40.0
+margin_bottom = 340.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Description/Enemies2"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Description/Enemies2"]
+margin_left = 70.0
+margin_right = 154.0
+margin_bottom = 104.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="TextureRect3" type="TextureRect" parent="Description/Enemies2"]
+margin_left = 140.0
+margin_right = 224.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 9 )
+
+[node name="TextureRect4" type="TextureRect" parent="Description/Enemies2"]
+margin_left = 210.0
+margin_right = 294.0
+margin_bottom = 82.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect5" type="TextureRect" parent="Description/Enemies2"]
+margin_left = 280.0
+margin_right = 364.0
+margin_bottom = 97.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 6 )
+
 [node name="Range" type="Label" parent="Description"]
 margin_left = 100.0
 margin_top = 380.0
-margin_right = 140.0
-margin_bottom = 420.0
+margin_right = 242.0
+margin_bottom = 442.0
 custom_fonts/font = ExtResource( 4 )
 text = "0 - 9"
 __meta__ = {

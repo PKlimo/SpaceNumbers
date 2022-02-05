@@ -18,7 +18,9 @@ var level_def = {
 	"14":{"od":1, "do":6, "speed":0, "typ":"F"},
 	"15":{"od":1, "do":9, "speed":0, "typ":"F"},
 	"16":{"od":1, "do":9, "speed":1, "typ":"F"},
-	"17":{"od":1, "do":9, "speed":2, "typ":"F"}
+	"17":{"od":1, "do":9, "speed":2, "typ":"F"},
+	"18":{"od":2, "do":6, "speed":0, "typ":"A"},
+	"19":{"od":2, "do":9, "speed":0, "typ":"A"}
 }
 
 func _ready():
@@ -28,13 +30,27 @@ func _ready():
 	$Description.set_global_position(get_node("../DescriptionPosition").global_position)
 	$Description.visible = false
 
+	$Description/Level.text = str("Level ", lvl)
+
 	$Description/Keyboard.od = level_def[str(lvl)]["od"]
 	$Description/Keyboard.do = level_def[str(lvl)]["do"]
 	$Description/Keyboard.draw()
 	
-	$Description/Range.text = str(level_def[str(lvl)]["od"], " - ", level_def[str(lvl)]["do"])
-	$Description/Range.visible = level_def[str(lvl)]["typ"] == "E"
-	$Description/Level.text = str("Level ", lvl)
+	if level_def[str(lvl)]["typ"] == "E":
+		$Description/Range.text = str(level_def[str(lvl)]["od"], " - ", level_def[str(lvl)]["do"])
+	elif level_def[str(lvl)]["typ"] == "A":
+		$Description/Enemies.rect_scale = Vector2(0.7,0.7)
+		$Description/Enemies.set_position(Vector2(40, 300))
+		$Description/Enemies2.rect_scale = Vector2(0.7,0.7)
+		$Description/Enemies2.set_position(Vector2(40, 350))
+		$Description/Range.rect_scale = Vector2(0.6,0.6)
+		$Description/Range.set_position(Vector2(45, 400))
+		var pom_r1 = level_def[str(lvl)]["od"] - 1
+		var pom_r2 = level_def[str(lvl)]["do"] - 1
+		$Description/Range.text = str(pom_r1, " - ", pom_r2, "         ", pom_r1, " - ", pom_r2)
+	else:
+		$Description/Range.visible = false
+	
 	
 	if level_def[str(lvl)]["speed"] < 2:
 		$Description/Speed/TextureRect3.modulate = Color(0.5, 0.5, 0.5)
