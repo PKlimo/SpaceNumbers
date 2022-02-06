@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/screen_bg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/pictures/game_ui/space_screen_bg.png" type="Texture" id=1]
 [ext_resource path="res://World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/game/Space/screen.gd" type="Script" id=3]
 [ext_resource path="res://Assets/fonts/thin_54.tres" type="DynamicFont" id=4]

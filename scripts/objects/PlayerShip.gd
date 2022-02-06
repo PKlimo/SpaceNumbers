@@ -15,6 +15,6 @@ func _physics_process(_delta):
 	direction = direction.normalized() * speed
 	
 	if can_move:	
-		move_and_slide(direction)
+		direction = move_and_slide(direction)
 		get_node("Sprite").global_rotation = look_direction.angle()
 	

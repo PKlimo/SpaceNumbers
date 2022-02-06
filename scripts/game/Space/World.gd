@@ -22,12 +22,20 @@ func _on_HomeShield_body_entered(_body):
 		if get_tree().change_scene("res://TitleScreen.tscn") != OK:
 			print("Error loading scene res://TitleScreen.tscn")
 
+func any_visible_enemies():
+	for i in $Level.get_children():
+		if i.visible == true:
+			return true
+	return false
+
 func _on_screen_keypad(key):
 	# print(get_node("Level").sollution)
 	# print(key)
 	if $Level.sollution.size() == 0:
 		return
 	if not get_node("../Keyboard").allowed(key):
+		return
+	if not any_visible_enemies():
 		return
 	get_node("../Keyboard").high(key)
 	if get_node("Level").sollution[0] == key:

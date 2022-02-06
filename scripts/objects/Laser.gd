@@ -14,14 +14,12 @@ func fire(toA, shield=false):
 		to = toA - Vector2(50,0) # korekcia, laser sa zastavi pred stitom
 	else:
 		to = toA
-	_draw()
-	update()
-	
+
+	update() # draw laser
 	yield(get_tree().create_timer(0.3), "timeout")
-	
 	to = null
-	_draw()
-	update()
+	update() # remove laser by setting to to null and calling _draw() via update()
+
 	get_node("shield").visible = false
 
 func _draw():
