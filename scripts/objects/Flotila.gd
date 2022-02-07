@@ -16,3 +16,9 @@ func _ready():
 	# print(del.slice(int(label_string)-1,9))
 	for i in del.slice(int(label_string)-1,9):
 		$skupina.get_children()[i].queue_free() 
+
+func hit():
+	.hit()
+	for i in $skupina.get_children():
+		if i is TextureRect:
+			i.visible = false

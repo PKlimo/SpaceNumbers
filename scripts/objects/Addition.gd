@@ -25,3 +25,13 @@ func _ready():
 		else:
 			i.queue_free()
 		j += 1
+
+func hit():
+	.hit()
+	for i in $skupina.get_children():
+		if i is TextureRect:
+			i.visible = false
+	for i in $skupina2.get_children():
+		if i is TextureRect:
+			i.visible = false
+	$EnemyLabel2.visible = false

@@ -7,9 +7,6 @@
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="EnemySprite" parent="." index="0"]
-texture = ExtResource( 2 )
-
 [node name="TextureRect" type="TextureRect" parent="." index="3"]
 margin_left = 47.1429
 margin_top = -45.7143

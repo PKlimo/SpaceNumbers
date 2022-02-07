@@ -2,9 +2,10 @@ extends Node
 
 var Item = preload("res://Item.tscn")
 
-func addItem(pos):
+func addItem(pos, wait = 0):
 	var item = Item.instance()
 	item.global_position = pos
+	yield(get_tree().create_timer(wait), "timeout")
 	add_child(item)
 
 func collect(item):

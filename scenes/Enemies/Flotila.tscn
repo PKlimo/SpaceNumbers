@@ -7,9 +7,6 @@
 [node name="Flotila" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
-[node name="EnemySprite" parent="." index="0"]
-texture = ExtResource( 3 )
-
 [node name="EnemyLabel" parent="." index="2"]
 visible = false
 

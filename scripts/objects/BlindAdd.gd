@@ -9,3 +9,8 @@ func _ready():
 	$EnemyLabel2.text = str(c2)
 
 	$TextureRect.set_texture($EnemySprite.texture)
+
+func hit():
+	.hit()
+	$TextureRect.visible = false
+	$EnemyLabel2.visible = false

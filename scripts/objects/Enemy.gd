@@ -22,8 +22,16 @@ func hit():
 	# TODO draw laser / line from player to current position
 	get_node("../../Laser").fire(Vector2(global_position.x-50,global_position.y-110))
 
-	# TODO animacia a explozia po skonceni animacie vymaze sam seba
-	queue_free()
+	# animacia a explozia po skonceni animacie vymaze sam seba
+	$EnemySprite.visible = false
+	$EnemyLabel.visible = false
+	$Explosions/AudioStreamPlayer.play()
+	$Explosions/Animation.play("explosion")
+	# queue_free() # node sa odstrani az po skonceni animacie
 
 func missed():
 	get_node("../../Laser").fire(Vector2(global_position.x-50,global_position.y-110),true)
+
+func _on_AnimatedSprite_animation_finished(anim_name):
+	if anim_name == "explosion":
+		queue_free()
