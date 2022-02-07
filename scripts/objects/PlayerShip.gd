@@ -12,7 +12,9 @@ func _physics_process(_delta):
 	)
 	if direction.length() > 0.0 and direction != look_direction:
 		look_direction = direction
+	
 	direction = direction.normalized() * speed
+	$Sprite/Flame.visible = (direction.length() > 0)
 	
 	if can_move:	
 		direction = move_and_slide(direction)

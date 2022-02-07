@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/pictures/game_ui/space_background_blue.png" type="Texture" id=1]
 [ext_resource path="res://Wave.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://scripts/objects/PlayerShip.gd" type="Script" id=10]
 [ext_resource path="res://scripts/objects/Items.gd" type="Script" id=11]
 [ext_resource path="res://Assets/sound/effects/sfx_shieldDown.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/pictures/player/engine2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/pictures/player/fire04.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -162,6 +164,30 @@ script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="PlayerShip"]
 texture = ExtResource( 3 )
+
+[node name="Engiene" type="TextureRect" parent="PlayerShip/Sprite"]
+margin_left = -43.3335
+margin_top = 5.0
+margin_right = -1.3335
+margin_bottom = 45.0
+rect_rotation = -90.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flame" type="TextureRect" parent="PlayerShip/Sprite"]
+visible = false
+margin_left = -73.3333
+margin_top = 8.33331
+margin_right = -33.3333
+margin_bottom = 48.3333
+rect_rotation = -90.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip"]
 position = Vector2( 3.8147e-06, 0 )
