@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	
 	direction = direction.normalized() * speed
 	$Sprite/Flame.visible = (direction.length() > 0)
-	
+	$AudioStreamPlayer.playing = (direction.length() > 0)
 	if can_move:	
 		direction = move_and_slide(direction)
 		get_node("Sprite").global_rotation = look_direction.angle()
