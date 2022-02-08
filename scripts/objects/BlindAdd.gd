@@ -12,5 +12,8 @@ func _ready():
 
 func hit():
 	.hit()
-	$TextureRect.visible = false
 	$EnemyLabel2.visible = false
+	yield(get_tree().create_timer(0.1), "timeout")
+	$TextureRect.self_modulate = Color(0,0,0,0)	
+	$TextureRect/Explosion/Animation.play("explosion")
+	

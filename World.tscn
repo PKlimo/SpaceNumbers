@@ -197,7 +197,6 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PlayerShip"]
 stream = ExtResource( 15 )
-volume_db = -10.487
 bus = "stlmenie"
 
 [node name="Laser" type="Node2D" parent="."]

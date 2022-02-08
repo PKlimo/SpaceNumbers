@@ -21,4 +21,6 @@ func hit():
 	.hit()
 	for i in $skupina.get_children():
 		if i is TextureRect:
-			i.visible = false
+			yield(get_tree().create_timer(0.05), "timeout")
+			i.self_modulate = Color(0,0,0,0)
+			i.get_node("Explosion/Animation").play("explosion")

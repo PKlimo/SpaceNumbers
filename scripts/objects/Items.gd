@@ -20,6 +20,7 @@ func all() -> bool:
 
 func remove_one(): # penalty for missed shot or pause
 	if get_child_count() > 1: # if there is anything other than sound
+		# get_children()[-1]
 		get_children()[-1].queue_free() # remove last item
 
 func remove_out_of_screen():

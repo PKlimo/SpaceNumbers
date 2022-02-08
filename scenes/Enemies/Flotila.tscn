@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/objects/Flotila.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/pictures/enemies/enemyBlack1_r.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Effects/Explosion.tscn" type="PackedScene" id=4]
 
 [node name="Flotila" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
@@ -22,6 +23,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Explosion" parent="skupina/TextureRect" index="0" instance=ExtResource( 4 )]
+
 [node name="TextureRect2" type="TextureRect" parent="skupina" index="1"]
 margin_left = -40.0
 margin_top = -148.571
@@ -31,6 +34,8 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Explosion" parent="skupina/TextureRect2" index="0" instance=ExtResource( 4 )]
 
 [node name="TextureRect3" type="TextureRect" parent="skupina" index="2"]
 margin_left = 57.1428
@@ -42,6 +47,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Explosion" parent="skupina/TextureRect3" index="0" instance=ExtResource( 4 )]
+
 [node name="TextureRect4" type="TextureRect" parent="skupina" index="3"]
 margin_left = 57.1429
 margin_top = -45.7143
@@ -51,6 +58,8 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Explosion" parent="skupina/TextureRect4" index="0" instance=ExtResource( 4 )]
 
 [node name="TextureRect5" type="TextureRect" parent="skupina" index="4"]
 margin_left = 57.1429
@@ -62,6 +71,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Explosion" parent="skupina/TextureRect5" index="0" instance=ExtResource( 4 )]
+
 [node name="TextureRect6" type="TextureRect" parent="skupina" index="5"]
 margin_left = 148.571
 margin_top = -148.571
@@ -71,6 +82,8 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Explosion" parent="skupina/TextureRect6" index="0" instance=ExtResource( 4 )]
 
 [node name="TextureRect7" type="TextureRect" parent="skupina" index="6"]
 margin_left = 148.571
@@ -82,6 +95,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Explosion" parent="skupina/TextureRect7" index="0" instance=ExtResource( 4 )]
+
 [node name="TextureRect8" type="TextureRect" parent="skupina" index="7"]
 margin_left = 148.571
 margin_top = 47.1428
@@ -91,3 +106,5 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Explosion" parent="skupina/TextureRect8" index="0" instance=ExtResource( 4 )]

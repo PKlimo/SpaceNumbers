@@ -44,7 +44,7 @@ func _on_screen_keypad(key):
 		get_node("Level").sollution.remove(0) # remove hit from sollutions
 		get_node("Level").get_children()[0].hit() # play animation and remove yourself
 		var pos = get_node("Level").get_children()[0].global_position
-		var pauza = get_node("Level").get_children()[0].get_node("Explosions/Animation").get_animation("explosion").length
+		var pauza = get_node("Level").get_children()[0].get_node("EnemySprite/Explosion/Animation").get_animation("explosion").length
 		get_node("Items").addItem(pos, pauza) #add item on position of enemy
 		if get_node("Level").get_child_count() == 1:
 			emit_signal("win")

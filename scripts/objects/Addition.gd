@@ -28,10 +28,13 @@ func _ready():
 
 func hit():
 	.hit()
-	for i in $skupina.get_children():
-		if i is TextureRect:
-			i.visible = false
-	for i in $skupina2.get_children():
-		if i is TextureRect:
-			i.visible = false
 	$EnemyLabel2.visible = false
+	for i in $skupina.get_children():
+		yield(get_tree().create_timer(0.05), "timeout")
+		i.self_modulate = Color(0,0,0,0)
+		i.get_node("Explosion/Animation").play("explosion")
+	for i in $skupina2.get_children():
+		yield(get_tree().create_timer(0.05), "timeout")
+		i.self_modulate = Color(0,0,0,0)
+		i.get_node("Explosion/Animation").play("explosion")
+	
