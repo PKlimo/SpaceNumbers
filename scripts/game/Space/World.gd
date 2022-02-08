@@ -37,6 +37,8 @@ func _on_screen_keypad(key):
 		return
 	if not any_visible_enemies():
 		return
+	if $Level.get_child_count() != $Level.sollution.size(): # entry from sollution is removed, but not object (because of animation)
+		return
 	get_node("../Keyboard").high(key)
 	if get_node("Level").sollution[0] == key:
 		# print("hit")

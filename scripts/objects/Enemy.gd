@@ -26,15 +26,10 @@ func hit():
 	$EnemySprite.self_modulate = Color(0,0,0,0)
 	$EnemyLabel.visible = false
 	
-	if $EnemySprite/Explosion/Animation.connect("animation_finished", self, "_on_AnimatedSprite_animation_finished") != OK:
-		print("Error connecting signal on_Item_body_entered")
 	$EnemySprite/Explosion/AudioStreamPlayer.play()
 	$EnemySprite/Explosion/Animation.play("explosion")
-	# queue_free() # node sa odstrani az po skonceni animacie
+	yield($EnemySprite/Explosion/Animation, "animation_finished") # wait until animation ends
+	queue_free() # node sa odstrani az po skonceni animacie
 
 func missed():
 	get_node("../../Laser").fire(Vector2(global_position.x-50,global_position.y-110),true)
-
-func _on_AnimatedSprite_animation_finished(anim_name):
-	if anim_name == "explosion":
-		queue_free()
