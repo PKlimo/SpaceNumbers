@@ -5,8 +5,7 @@ func _ready():
 	kon -=120
 
 	for i in $skupina.get_children():
-		if i is TextureRect:
-			i.set_texture($EnemySprite.texture)
+		i.set_texture($EnemySprite.texture)
 	
 	# delete random ship
 	var del = range($skupina.get_child_count())
@@ -19,8 +18,10 @@ func _ready():
 
 func hit():
 	.hit()
+	var off = 0.1
 	for i in $skupina.get_children():
-		if i is TextureRect:
-			yield(get_tree().create_timer(0.05), "timeout")
-			i.self_modulate = Color(0,0,0,0)
-			i.get_node("Explosion/Animation").play("explosion")
+		var explosion = Explosion.instance()
+		explosion.global_position = i.global_position
+		explosion.wait = off
+		off += 0.1
+		get_node("/root/screen/World/Effects").add_child(explosion)

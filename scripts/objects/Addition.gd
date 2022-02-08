@@ -28,13 +28,17 @@ func _ready():
 
 func hit():
 	.hit()
-	$EnemyLabel2.visible = false
+	var off = 0.1
 	for i in $skupina.get_children():
-		yield(get_tree().create_timer(0.05), "timeout")
-		i.self_modulate = Color(0,0,0,0)
-		i.get_node("Explosion/Animation").play("explosion")
+		var explosion = Explosion.instance()
+		explosion.global_position = i.global_position
+		explosion.wait = off
+		off += 0.1
+		get_node("/root/screen/World/Effects").add_child(explosion)
 	for i in $skupina2.get_children():
-		yield(get_tree().create_timer(0.05), "timeout")
-		i.self_modulate = Color(0,0,0,0)
-		i.get_node("Explosion/Animation").play("explosion")
+		var explosion = Explosion.instance()
+		explosion.global_position = i.global_position
+		explosion.wait = off
+		off += 0.1
+		get_node("/root/screen/World/Effects").add_child(explosion)
 	

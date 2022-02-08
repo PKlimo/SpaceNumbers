@@ -1,5 +1,6 @@
 extends Area2D
 
+var Explosion = preload("res://scenes/Effects/Explosion.tscn")
 var speed:int
 var label_string
 var live = true
@@ -22,14 +23,11 @@ func hit():
 	# TODO draw laser / line from player to current position
 	get_node("../../Laser").fire(Vector2(global_position.x-50,global_position.y-110))
 
-	# animacia a explozia po skonceni animacie vymaze sam seba
-	$EnemySprite.self_modulate = Color(0,0,0,0)
-	$EnemyLabel.visible = false
-	
-	$EnemySprite/Explosion/AudioStreamPlayer.play()
-	$EnemySprite/Explosion/Animation.play("explosion")
-	yield($EnemySprite/Explosion/Animation, "animation_finished") # wait until animation ends
-	queue_free() # node sa odstrani az po skonceni animacie
+	var explosion = Explosion.instance()
+	explosion.global_position = self.global_position
+	explosion.sound = true
+	get_node("/root/screen/World/Effects").add_child(explosion)
+	queue_free() 
 
 func missed():
 	get_node("../../Laser").fire(Vector2(global_position.x-50,global_position.y-110),true)

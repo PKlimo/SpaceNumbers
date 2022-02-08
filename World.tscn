@@ -234,5 +234,7 @@ script = ExtResource( 11 )
 [node name="sound" type="AudioStreamPlayer" parent="Items"]
 stream = ExtResource( 12 )
 
+[node name="Effects" type="Node" parent="."]
+
 [connection signal="area_entered" from="HomeShield" to="." method="_on_HomeShield_area_entered"]
 [connection signal="body_entered" from="HomeShield" to="." method="_on_HomeShield_body_entered"]
