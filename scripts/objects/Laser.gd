@@ -11,7 +11,7 @@ func fire(toA, shield=false):
 	if shield:
 		get_node("shield").visible = true
 		get_node("shield").global_position = toA + Vector2(0,120)
-		to = toA - Vector2(50,0) # korekcia, laser sa zastavi pred stitom
+		to = toA.clamped(toA.length() - 65) # korekcia, laser sa zastavi pred stitom
 	else:
 		to = toA
 
