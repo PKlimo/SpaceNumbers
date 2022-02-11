@@ -28,6 +28,7 @@ func _ready():
 
 func hit():
 	.hit()
+	yield(self,"dead")
 	var off = 0.1
 	for i in $skupina.get_children():
 		var explosion = Explosion.instance()

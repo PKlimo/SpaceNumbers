@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/pictures/enemies/enemyBlack1_r.png" type="Texture" id=1]
+[ext_resource path="res://Assets/pictures/enemies/shield1.png" type="Texture" id=2]
 [ext_resource path="res://scripts/objects/Enemy.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -35,3 +36,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="shield" type="Sprite" parent="."]
+rotation = -1.5708
+texture = ExtResource( 2 )

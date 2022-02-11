@@ -12,6 +12,7 @@ func _ready():
 
 func hit():
 	.hit()
+	yield(self,"dead")
 	
 	var explosion = Explosion.instance()
 	explosion.global_position = $TextureRect.global_position
